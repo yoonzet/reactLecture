@@ -1,24 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import Component01 from './1장 (리액트 입문)/5-6(props, 조건부 렌더링)/Component01';
+import Component02 from './1장 (리액트 입문)/7(카운트만들기)/Component02';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Component01/>
+      <Component02/>
+    </>
   );
 }
 
