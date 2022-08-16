@@ -27,6 +27,7 @@ function Component02() {
   }
   return (
     <div>
+      <p>[카운터만들기]</p>
       <h1>{number}</h1>
       <button onClick={onIncrese}>+1</button>
       <button onClick={onDecrese}>-1</button>

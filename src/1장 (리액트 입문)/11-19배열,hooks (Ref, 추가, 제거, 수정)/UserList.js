@@ -5,10 +5,10 @@ function User({ user, onRemove, onToggle }) {
   // useEffect 를 사용 할 때에는 첫번째 파라미터에는 함수, 두번째 파라미터에는 의존값이 들어있는 배열 (deps)을 넣습니다.
     useEffect(() => {
       console.log('화면나옴')
-      console.log(user)
+      // console.log(user)
       return () => {
         console.log('컴포넌트 사라짐')
-        console.log(user)
+        // console.log(user)
       }
     },[user]) // deps(배열)에는 useEffect 안에서 사용하는 상태나, props를 넣는다
 
@@ -48,4 +48,4 @@ function UserList({users, onRemove, onToggle}) {
   )
 }
 
-export default UserList;
+export default React.memo(UserList);

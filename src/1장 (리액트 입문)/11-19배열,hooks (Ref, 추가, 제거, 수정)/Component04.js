@@ -1,7 +1,14 @@
 import React, { useRef } from 'react'
+import { useMemo } from 'react';
+import { useCallback } from 'react';
 import { useState } from 'react';
 import CreateUser from './CreateUser';
 import UserList from './UserList';
+
+function countActiveUsers(users) {
+  console.log('활성 사용자 수 세는중...');
+  return users.filter(user => user.active).length;
+}
 
 function Component04() {
   const [inputs, setInputs] = useState({
@@ -9,13 +16,13 @@ function Component04() {
     email:''
   });
   const {username, email} = inputs;
-  const onChange = e => {
+  const onChange = useCallback( e => {
     const {name, value} = e.target;
     setInputs({
       ...inputs,
       [name]:value
     })
-  }
+  },[inputs]);
 
   const [users, setUsers] = useState([
     {
@@ -58,17 +65,19 @@ function Component04() {
     nextId.current += 1
   }
 
-  const onRemove = id => {
+  const onRemove = useCallback( id => {
      // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
     // = user.id 가 id 인 것을 제거함
     setUsers(users.filter(user => user.id !== id));
-  }
+  },[]);
 
-  const onToggle = id => {
+  const onToggle = useCallback( id => {
     setUsers(users.map(user => 
       user.id === id ? {...user, active: !user.active} : user
       ));
-  }
+  },[]);
+  const count = useMemo(() => countActiveUsers(users), [users]) ;
+  //useMemo(fn, []) 두번째 인수에 넣어준 배열의 값이 바뀔때만 함수가 실행된다. 그렇지 않다면 이전의 값을 재사용한다.
 
   return (
     <div>
@@ -83,6 +92,7 @@ function Component04() {
       users={users}
       onRemove={onRemove}
       onToggle={onToggle}/>
+      <div>활성사용자 수: {count} </div>
     </div>
   )
 }

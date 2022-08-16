@@ -2,33 +2,35 @@ import React from 'react'
 import { useState } from 'react'
 
 function Test() {
-    const [inputs, setInputs] = useState({
+    const [input, setInput] = useState({
         width: '',
         height: ''
-    })
+    });
+    const {width, height} = input;
 
-    const {width, height} = inputs;
-
-    const onChange = (e) =>{
-        const {name, value} = e.target;
-        setInputs({
-            ...inputs,
-            [name]: value
+    const onChange = e => {
+        const {name, value} = e.target
+        setInput({
+            ...input,
+            [name]:value
         })
     }
 
-    const onReset = () =>{
-        setInputs({
+    const onClick = () =>{
+        setInput({
             width: '',
             height: ''
         })
     }
+    
   return (
     <div>
-        <input name="width" onChange={onChange} placeholder='width' value={width} />
-        <input name="height" onChange={onChange} placeholder='height' value={height} />
-        <button onClick={onReset}>초기화</button>
-        <p onChange={onChange}>w: {width}, h: {height}</p>
+        <hr />
+        <p>연습</p>
+        <input name='width' onChange={onChange} value={width}/>
+        <input name='height' onChange={onChange} value={height}/>
+        <button onClick={onClick}>초기화</button>
+        <p onChange={onChange}>w:{width} , h: {height}</p>
     </div>
   )
 }
