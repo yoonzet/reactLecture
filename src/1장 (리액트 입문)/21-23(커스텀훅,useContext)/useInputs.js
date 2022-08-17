@@ -13,7 +13,7 @@ function reducer(state, action){
             return Object.keys(state).reduce((acc, cur)=> {
                 acc[cur] = '';
                 return acc;
-            },{})
+            }, {})
         default:
             return state
     }
