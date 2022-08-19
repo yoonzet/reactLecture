@@ -7,7 +7,7 @@ import Component04 from './1장 (리액트 입문)/11-19배열,hooks (Ref, 추�
 import Test01 from './1장 (리액트 입문)/연습/useEffect연습/Test01';
 import Test02 from './1장 (리액트 입문)/연습/useMemo연습/Test02';
 import Component05 from './1장 (리액트 입문)/20(useReducer)/Component05';
-import Component06 from './1장 (리액트 입문)/21-22(커스텀훅,useContext)/Component06';
+import Component06 from './1장 (리액트 입문)/21-23(커스텀훅,useContext)/Component06';
 
 function App() {
   return (
@@ -22,7 +22,6 @@ function App() {
       <Component05/>
       <Component06/>
       
-
     </>
   );
 }

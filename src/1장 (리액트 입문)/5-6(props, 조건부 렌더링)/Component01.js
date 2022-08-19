@@ -3,6 +3,7 @@
 
 import React from 'react'
 import Hello from './Hello';
+import HelloClass from './HelloClass';
 import Wrapper from './Wrapper';
 
 function Component01() {
@@ -19,6 +20,11 @@ function Component01() {
       
       />
       <Hello />
+      <HelloClass
+        hello = '헬로'
+        color = 'red'
+        isSpecial = {true}
+      />
     </div>
     </Wrapper>
   )

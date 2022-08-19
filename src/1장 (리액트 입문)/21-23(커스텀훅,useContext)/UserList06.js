@@ -30,7 +30,6 @@ function UserList06({users}) {
     <div>
         {users.map( (user, index) =>{
         return (
-          // 만약 배열 안의 원소가 가지고 있는 고유한 값이 없다면 map() 함수를 사용 할 때 설정하는 콜백함수의 두번째 파라미터 index 를 key 로 사용하면 된다.
           <div key={index}>
             <User user={user}/>
           </div>
