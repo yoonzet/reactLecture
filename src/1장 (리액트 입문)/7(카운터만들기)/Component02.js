@@ -1,11 +1,10 @@
 // 7. useState 를 통해 컴포넌트에서 바뀌는 값 관리하기
 // https://react.vlpt.us/basic/07-useState.html
 
-import React from 'react'
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 
 function Component02() {
-
   //number은 현재상태, setNumber을 setter함수이다.
   const [number, setNumber] = useState(0);
 
@@ -14,17 +13,14 @@ function Component02() {
   // const number = numberState[0];
   // const setNumber = numberState[1];
 
-
-  const onIncrese = () =>{
+  const onIncrese = () => {
     // setNumber(number + 1)
-    setNumber(prevNum => prevNum + 1); // 함수형 업데이트(최적화를 해준다)
-
-  }
-  const onDecrese = () =>{
-    setNumber(number - 1)
-    setNumber(prevNum => prevNum - 1);
-
-  }
+    setNumber((prevNum) => prevNum + 1); // 함수형 업데이트(최적화를 해준다)
+  };
+  const onDecrese = () => {
+    setNumber(number - 1);
+    setNumber((prevNum) => prevNum - 1);
+  };
   return (
     <div>
       <p>[카운터만들기]</p>
@@ -32,7 +28,7 @@ function Component02() {
       <button onClick={onIncrese}>+1</button>
       <button onClick={onDecrese}>-1</button>
     </div>
-  )
+  );
 }
 
 export default Component02;
