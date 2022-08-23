@@ -1,3 +1,5 @@
+// 4장 2.useReducer로 상태관리
+
 import axios from "axios";
 import React, { useEffect, useReducer } from "react";
 
@@ -58,7 +60,7 @@ function Users_useReducer() {
   return (
     <div>
       <hr />
-      <h2>useReducer로 작업</h2>
+      <h2>4-02. useReducer로 작업</h2>
       <ul>
         {users.map((user) => (
           <li key={user.id}>

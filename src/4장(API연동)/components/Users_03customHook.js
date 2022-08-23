@@ -1,3 +1,4 @@
+// 4장 3.커스텀 훅
 import axios from "axios";
 import React, { useState } from "react";
 import useAsync from "./useAsync";
@@ -12,7 +13,7 @@ async function getUsers() {
 
 function Users_customHook() {
   const [userId, setUserId] = useState(null);
-  const [state, refetch] = useAsync(getUsers, [], true);
+  const [state, refetch] = useAsync(getUsers, [], false); //true로 바꾸면 감춰짐
 
   const { loading, data: users, error } = state;
 
@@ -22,7 +23,7 @@ function Users_customHook() {
   return (
     <div>
       <hr />
-      <h2>커스텀 훅으로 작업</h2>
+      <h2>4-03. 커스텀 훅으로 작업</h2>
       <ul>
         {users.map((user) => (
           <li

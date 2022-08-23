@@ -7,7 +7,7 @@ function Users() {
   const [error, setError] = useState(null);
 
   const fetchUsers = async () => {
-    // useEffect의 첫번째 인자로 async가 올수 없기때문에 내부에서 async를 선언해준다.
+    // useEffect를 사용한다면 useEffect의 첫번째 인자로 async가 올수 없기때문에 내부에서 async를 선언해준다. (현재는 밖으로 빼둔 상태임.)
     try {
       setError(null);
       setUsers(null);
@@ -32,6 +32,7 @@ function Users() {
 
   return (
     <div>
+      <h2>4-01. API기본</h2>
       <ul>
         {users.map((user) => (
           <li key={user.id}>
